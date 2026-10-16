@@ -1,0 +1,34 @@
+[package]
+name = "qnn"
+version = "1.0.0"
+description = "Compilation and runtime compatibility for Qualcomm QNN"
+
+[build.graph.lowering]
+toolchain = "cpp"
+sources = ["src/lowering.cpp"]
+exports = ["qnn_lowering"]
+
+[build.graph.backend]
+toolchain = "cpp"
+sources = ["src/backend.cpp"]
+exports = ["qnn_backend"]
+includes = [
+    "src",
+    "${QAIRT_ROOT}/include/QNN",
+]
+libraries = ["dl"]
+
+[build.driver]
+toolchain = "cpp"
+sources = ["src/driver.cpp"]
+includes = ["${QAIRT_ROOT}/include/QNN"]
+libraries = ["dl"]
+
+[capabilities]
+provides = [
+    "target-qnn",
+    "lowering-qnn",
+    "backend-qnn",
+    "driver-qnn",
+    "format-qnn-context-v2",
+]

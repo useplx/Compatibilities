@@ -1,0 +1,12 @@
+**/build/
+**/build-*/
+QNN/runtime/
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+*.mln
+*.vmfb
+*.irpa
+.cache/

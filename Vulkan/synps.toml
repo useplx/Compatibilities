@@ -1,0 +1,19 @@
+[package]
+name = "vulkan"
+version = "1.0.0"
+description = "Portable operation compatibility for Vulkan targets"
+
+[build.graph.compatibility]
+toolchain = "cpp"
+sources = ["src/vulkan.cpp"]
+exports = [
+    "vulkan_support",
+    "vulkan_attention",
+    "vulkan_broadcast",
+    "vulkan_gated_delta_rule",
+    "vulkan_reduction",
+    "vulkan_matmul",
+]
+
+[capabilities]
+provides = ["operation-compatibility", "target-vulkan"]

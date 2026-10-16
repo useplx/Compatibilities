@@ -1,0 +1,15 @@
+[package]
+name = "adreno-643"
+version = "1.0.0"
+description = "Operation compatibility for Adreno 643 through Vulkan"
+
+[dependencies]
+vulkan = { path = "../Vulkan" }
+
+[build.graph.compatibility]
+toolchain = "cpp"
+sources = ["src/adreno.cpp"]
+exports = ["adreno_matmul", "adreno_transpose", "adreno_convert", "adreno_reduction"]
+
+[capabilities]
+provides = ["operation-compatibility", "target-adreno-643"]

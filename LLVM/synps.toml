@@ -1,0 +1,12 @@
+[package]
+name = "llvm"
+version = "1.0.0"
+description = "Operation support declared for IREE LLVM CPU targets"
+
+[build.graph.compatibility]
+toolchain = "cpp"
+sources = ["src/llvm.cpp"]
+exports = ["llvm_support"]
+
+[capabilities]
+provides = ["operation-compatibility", "target-llvm-cpu"]

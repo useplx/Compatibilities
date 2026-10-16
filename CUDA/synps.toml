@@ -1,0 +1,12 @@
+[package]
+name = "cuda"
+version = "1.0.0"
+description = "Operation compatibility for CUDA targets"
+
+[build.graph.compatibility]
+toolchain = "cpp"
+sources = ["src/cuda.cpp"]
+exports = ["cuda_gated_delta_rule"]
+
+[capabilities]
+provides = ["operation-compatibility", "target-cuda"]
